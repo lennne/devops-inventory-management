@@ -19,11 +19,11 @@ The application follows a traditional 3-tier architecture deployed on AWS:
 The infrastructure is built within a custom Virtual Private Cloud (VPC) to ensure complete isolation and control:
 
 * **CIDR Block:** `10.0.0.0/16`
-* **Public Subnet:** Hosts the EC2 backend. Associated with an **Internet Gateway** and a Public Route Table [[06:03:51](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=21831)].
-* **Private Subnets:** Two subnets in different Availability Zones (Multi-AZ) to host the RDS database [[06:31:56](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=23516)].
+* **Public Subnet:** Hosts the EC2 backend. Associated with an **Internet Gateway** and a Public Route Table
+* **Private Subnets:** Two subnets in different Availability Zones (Multi-AZ) to host the RDS database
 * **Security Groups:**
-* **Public SG (EC2):** Allows inbound HTTP/HTTPS and SSH for administration [[06:13:27](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=22407)].
-* **Private SG (RDS):** Restricts inbound traffic strictly to the EC2 security group on Port 5432 [[06:37:15](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=23835)].
+* **Public SG (EC2):** Allows inbound HTTP/HTTPS and SSH for administration
+* **Private SG (RDS):** Restricts inbound traffic strictly to the EC2 security group on Port 5432
 
 
 
