@@ -31,31 +31,31 @@ The infrastructure is built within a custom Virtual Private Cloud (VPC) to ensur
 
 ### 1. Database Setup (RDS)
 
-* Deploy a PostgreSQL instance using the **Free Tier** template [[06:34:00](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=23640)].
+* Deploy a PostgreSQL instance using the **Free Tier** template 
 * Configure a **DB Subnet Group** using the two private subnets.
-* Initialize the schema using **Prisma** migrations from the EC2 instance [[06:41:53](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=24113)].
+* Initialize the schema using **Prisma** migrations from the EC2 instance 
 
 ### 2. Backend Compute (EC2)
 
-* Launch an Amazon Linux 2023 instance [[06:10:17](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=22217)].
-* Install environment dependencies: **Node.js (NVM)** and **Git** [[06:15:04](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=22504)].
-* Utilize **PM2** (Process Manager) to ensure the Node.js server remains running after reboots or crashes [[06:26:28](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=23188)].
+* Launch an Amazon Linux 2023 instance
+* Install environment dependencies: **Node.js (NVM)** and **Git** 
+* Utilize **PM2** (Process Manager) to ensure the Node.js server remains running after reboots or crashes.
 
 ### 3. API Gateway Integration
 
-* Create an **HTTP API** to route requests from the Amplify frontend to the EC2 public IP [[06:48:44](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=24524)].
-* Enables HTTPS communication for the frontend to avoid "Mixed Content" security blocks [[06:52:03](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=24723)].
+* Create an **HTTP API** to route requests from the Amplify frontend to the EC2 public IP 
+* Enables HTTPS communication for the frontend to avoid "Mixed Content" security blocks 
 
 ### 4. Static Assets (S3)
 
-* Bucket created for product images with **Public Access** enabled specifically for the asset folder [[06:53:14](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=24794)].
-* Configured **Bucket Policies** to allow `s3:GetObject` for public image rendering [[06:55:12](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=24912)].
+* Bucket created for product images with **Public Access** enabled specifically for the asset folder 
+* Configured **Bucket Policies** to allow `s3:GetObject` for public image rendering 
 
 ### 5. Frontend & CI/CD (Amplify)
 
-* Connected the GitHub repository to **AWS Amplify** [[06:46:06](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=24366)].
-* Configured build settings to target the `/client` directory in the monorepo [[06:46:44](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=24404)].
-* Environmental variables mapped to the API Gateway Invoke URL [[06:47:14](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=24434)].
+* Connected the GitHub repository to **AWS Amplify** 
+* Configured build settings to target the `/client` directory in the monorepo 
+* Environmental variables mapped to the API Gateway Invoke URL 
 
 ## 🛠️ Tech Stack
 
@@ -67,8 +67,8 @@ The infrastructure is built within a custom Virtual Private Cloud (VPC) to ensur
 
 ## 🔒 Security Best Practices Implemented
 
-* **Least Privilege:** Security groups are scoped to specific ports and source IDs [[06:37:15](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=23835)].
-* **Data Isolation:** Database is not reachable from the public internet [[06:35:11](http://www.youtube.com/watch?v=ddKQ8sZo_v8&t=23711)].
+* **Least Privilege:** Security groups are scoped to specific ports and source IDs 
+* **Data Isolation:** Database is not reachable from the public internet 
 * **Secure Secrets:** Database credentials managed via `.env` files (simulating AWS Secrets Manager behavior).
 * **HTTPS:** Encrypted transit for all user-facing data via API Gateway.
 
