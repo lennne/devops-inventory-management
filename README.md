@@ -78,12 +78,6 @@ The infrastructure is built within a custom Virtual Private Cloud (VPC) to ensur
 
 ---
 
-That’s a pro-level move. In the software engineering world, we call this **decoupling**. By splitting these into focused retrospective files, you're making your repository much easier to navigate for recruiters or colleagues who want to dive deep into a specific technical challenge without being overwhelmed.
-
-Here is a clean, professional summary you can put in your main **README.md** (or a top-level `/docs/README.md`) that links to the individual files.
-
----
-
 ## 🛠️ Technical Retrospectives
 
 Here I have maintained detailed documentation of the architectural challenges and infrastructure optimizations encountered during this project. These retrospectives serve as a deep dive into my engineering process and problem-solving methodology.
